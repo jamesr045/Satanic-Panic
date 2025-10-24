@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Melanchall.DryWetMidi.Interaction;
 using Melanchall.DryWetMidi.MusicTheory;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Lane : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
-    public KeyCode input;
+    private InputAction input;
     
     public GameObject notePrefab;
 
@@ -16,6 +17,15 @@ public class Lane : MonoBehaviour
 
     private int spawnIndex = 0;
     private int inputIndex = 0;
+
+    private void Start()
+    {
+        if (this.CompareTag("Lane 1")) input = InputSystem.actions.FindAction("Lane 1 Press");
+        if (this.CompareTag("Lane 2")) input = InputSystem.actions.FindAction("Lane 2 Press");
+        if (this.CompareTag("Lane 3")) input = InputSystem.actions.FindAction("Lane 3 Press");
+        if (this.CompareTag("Lane 4")) input = InputSystem.actions.FindAction("Lane 4 Press");
+
+    }
 
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
@@ -49,7 +59,7 @@ public class Lane : MonoBehaviour
             double marginOfError = SongManager.Instance.marginOfError;
             double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInSeconds / 1000.0);
 
-            if (Input.GetKeyDown(input))
+            if (input.triggered)
             {
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
