@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &90048723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 938099779916686226, guid: b7b38475112d50841bf128e258ee15d1, type: 3}
+  m_PrefabInstance: {fileID: 7936476872858443097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &105881278
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +442,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &612818690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7343996152115158101, guid: bd921ee179cac0249ae49a8b199fffbe, type: 3}
+  m_PrefabInstance: {fileID: 155818185655246011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &720499741
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +576,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1649234200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1284273842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 510067212759204239, guid: 3887af153cc754a49b34cedbd99199a6, type: 3}
+  m_PrefabInstance: {fileID: 131187285387827100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1550456813
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,8 +894,8 @@ MonoBehaviour:
   - {fileID: 7936476872858443098}
   - {fileID: 131187285387827101}
   - {fileID: 155818185655246012}
-  songDelayInSeconds: 5
-  marginOfError: 0.2
+  songDelayInSeconds: 3
+  marginOfError: 0.1
   inputDelayInSeconds: 0
   songFileLocation: SunsetSupernove Chart.mid
   noteTimeUntilHit: 1
@@ -1096,7 +1111,7 @@ Transform:
   m_GameObject: {fileID: 1971008442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.3, z: 0}
+  m_LocalPosition: {x: 0, y: -3.2, z: 0}
   m_LocalScale: {x: 7.0875, y: 0.087501, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1243,6 +1258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lane 3
       objectReference: {fileID: 0}
+    - target: {fileID: 510067212759204239, guid: 3887af153cc754a49b34cedbd99199a6, type: 3}
+      propertyPath: m_TagString
+      value: Lane 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7333124748957744904, guid: 3887af153cc754a49b34cedbd99199a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
@@ -1286,19 +1305,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 510067212759204239, guid: 3887af153cc754a49b34cedbd99199a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 131187285387827103}
   m_SourcePrefab: {fileID: 100100000, guid: 3887af153cc754a49b34cedbd99199a6, type: 3}
 --- !u!114 &131187285387827101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7784734164348473357, guid: 3887af153cc754a49b34cedbd99199a6, type: 3}
   m_PrefabInstance: {fileID: 131187285387827100}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1284273842}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62acbd0e0121ecc40ad8a8e18b14afd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &131187285387827103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284273842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &155818185655246011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1351,22 +1403,59 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lane 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7343996152115158101, guid: bd921ee179cac0249ae49a8b199fffbe, type: 3}
+      propertyPath: m_TagString
+      value: Lane 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7343996152115158101, guid: bd921ee179cac0249ae49a8b199fffbe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 155818185655246014}
   m_SourcePrefab: {fileID: 100100000, guid: bd921ee179cac0249ae49a8b199fffbe, type: 3}
 --- !u!114 &155818185655246012 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2759501139451940162, guid: bd921ee179cac0249ae49a8b199fffbe, type: 3}
   m_PrefabInstance: {fileID: 155818185655246011}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 612818690}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62acbd0e0121ecc40ad8a8e18b14afd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &155818185655246014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612818690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &2666520933280519769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1419,6 +1508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lane 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5609516866932879034, guid: e3f3dc64a0bafc74b986b23520a59b43, type: 3}
+      propertyPath: m_TagString
+      value: Lane 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1445,6 +1538,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 938099779916686226, guid: b7b38475112d50841bf128e258ee15d1, type: 3}
       propertyPath: m_Name
+      value: Lane 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 938099779916686226, guid: b7b38475112d50841bf128e258ee15d1, type: 3}
+      propertyPath: m_TagString
       value: Lane 2
       objectReference: {fileID: 0}
     - target: {fileID: 6852577948183388089, guid: b7b38475112d50841bf128e258ee15d1, type: 3}
@@ -1490,19 +1587,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 938099779916686226, guid: b7b38475112d50841bf128e258ee15d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7936476872858443100}
   m_SourcePrefab: {fileID: 100100000, guid: b7b38475112d50841bf128e258ee15d1, type: 3}
 --- !u!114 &7936476872858443098 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8533408899273649538, guid: b7b38475112d50841bf128e258ee15d1, type: 3}
   m_PrefabInstance: {fileID: 7936476872858443097}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 90048723}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62acbd0e0121ecc40ad8a8e18b14afd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7936476872858443100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90048723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
