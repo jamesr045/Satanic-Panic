@@ -14,10 +14,12 @@ public class Lane : MonoBehaviour
 
     private List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
-
+    
     private int spawnIndex = 0;
     private int inputIndex = 0;
-
+    
+    
+    
     private void Start()
     {
         if (this.CompareTag("Lane 1")) input = InputSystem.actions.FindAction("Lane 1 Press");
@@ -26,8 +28,8 @@ public class Lane : MonoBehaviour
         if (this.CompareTag("Lane 4")) input = InputSystem.actions.FindAction("Lane 4 Press");
 
     }
-
-
+    
+    
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {
         foreach (var note in array)
