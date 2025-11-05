@@ -54,7 +54,7 @@ public class Lane : MonoBehaviour
         {
             if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTimeUntilHit)
             {
-                var note = Instantiate(notePrefab, transform);
+                var note = Instantiate(notePrefab, transform.position,  notePrefab.transform.rotation);
                 var noteScript = note.GetComponent<Note>();
                 notes.Add(noteScript);
                 noteScript.assignedTime = (float)timeStamps[spawnIndex];
@@ -83,6 +83,7 @@ public class Lane : MonoBehaviour
                 else
                 {
                     print($"Missed {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    Miss();
                 }
             }
 
