@@ -8,8 +8,8 @@ public class Note : MonoBehaviour
     
     private SpriteRenderer spriteRenderer;
     
-    //Scaling Variables
     public Vector3 spawnPos;
+    public Vector3 despawnPos;
     
      void Start()
     {
@@ -20,17 +20,17 @@ public class Note : MonoBehaviour
     
     void Update()
     {
-        //Scaling things
-        float distanceFromScreenTop = Vector3.Distance(spawnPos, transform.position);
-        float minDistance = 0f;
-        float maxDistance = 17f;
-        float minSize = 0;
-        float maxSize = 0.35f;
-        
-        float normalizedDistance = Mathf.InverseLerp(minDistance, maxDistance, distanceFromScreenTop);
-        float scale = Mathf.Lerp(minSize, maxSize, normalizedDistance);
-        
-        transform.localScale = new Vector3(scale, scale, scale);
+        // //Scaling things in 2D view
+        // float distanceFromScreenTop = Vector3.Distance(spawnPos, transform.position);
+        // float minDistance = 0f;
+        // float maxDistance = 17f;
+        // float minSize = 0;
+        // float maxSize = 0.35f;
+        //
+        // float normalizedDistance = Mathf.InverseLerp(minDistance, maxDistance, distanceFromScreenTop);
+        // float scale = Mathf.Lerp(minSize, maxSize, normalizedDistance);
+        //
+        // transform.localScale = new Vector3(scale, scale, scale);
         
         
         
@@ -45,7 +45,7 @@ public class Note : MonoBehaviour
         }
         else
         {
-             transform.localPosition = Vector3.Lerp(SongManager.Instance.noteSpawn, SongManager.Instance.noteDespawn, t);
+             transform.position = Vector3.Lerp(spawnPos, despawnPos, t);
              spriteRenderer.enabled = true;
         }
     }
