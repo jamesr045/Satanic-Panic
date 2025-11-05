@@ -1004,6 +1004,7 @@ MonoBehaviour:
   - {fileID: 7936476872858443098}
   - {fileID: 131187285387827101}
   - {fileID: 155818185655246012}
+  rhythmTrackPos: {fileID: 1860538730}
   songDelayInSeconds: 5
   marginOfError: 0.2
   inputDelayInSeconds: 0

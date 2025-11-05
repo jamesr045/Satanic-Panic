@@ -15,6 +15,8 @@ public class Note : MonoBehaviour
     {
         timeCreated = assignedTime - SongManager.Instance.noteTimeUntilHit;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        transform.rotation = SongManager.Instance.rhythmTrackPos.rotation;
     }
 
     

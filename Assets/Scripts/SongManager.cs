@@ -12,6 +12,7 @@ public class SongManager : MonoBehaviour
     public static SongManager Instance;
     public AudioSource audioSource;
     public Lane[] lanes;
+    public Transform rhythmTrackPos;
     
     public float songDelayInSeconds;
     public double marginOfError;
