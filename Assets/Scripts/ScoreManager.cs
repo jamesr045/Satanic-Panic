@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -6,8 +7,10 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     public AudioSource hitSound;
     public AudioSource missSound;
-    public TMPro.TextMeshProUGUI scoreText;
-    private static int comboScore;
+    public TMPro.TextMeshPro scoreText;
+    public TMPro.TextMeshPro hitText;
+    
+    private static int _comboScore;
 
     
 
@@ -15,23 +18,38 @@ public class ScoreManager : MonoBehaviour
     {
         Instance = this;
         
-        comboScore = 0;
+        _comboScore = 0;
+
+        hitText.enabled = false;
     }
 
-    public static void Hit()
+    public void Hit()
     {
         Instance.hitSound.Play();
-        comboScore++;
+        StartCoroutine(HitText());
+        _comboScore++;
     }
 
-    public static void Miss()
+    public void Miss()
     {
         Instance.missSound.Play();
-        comboScore = 0;
+        _comboScore = 0;
     }
 
     private void Update()
     {
-        scoreText.text = comboScore.ToString();
+        scoreText.text = ($"COMBO: {_comboScore.ToString()}");
+    }
+
+    private IEnumerator HitText()
+    {
+        hitText.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        hitText.enabled = false;
+
+        if (SongManager.GetAudioSourceTime() >= SongManager.Instance.audioSource.clip.length)
+        {
+            //End of song
+        }
     }
 }

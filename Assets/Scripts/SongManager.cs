@@ -17,7 +17,7 @@ public class SongManager : MonoBehaviour
     public float songDelayInSeconds;
     public double marginOfError;
     
-    public int inputDelayInSeconds;
+    public float inputDelayInSeconds;
 
     public string songFileLocation;
     public float noteTimeUntilHit;
@@ -28,9 +28,10 @@ public class SongManager : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        
-        
-        
+    }
+
+    public void StartRhythmGame()
+    {
         if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
         {
             StartCoroutine(ReadFromWebsite());

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Melanchall.DryWetMidi.Interaction;
 using Melanchall.DryWetMidi.MusicTheory;
@@ -7,7 +8,7 @@ using UnityEngine.InputSystem;
 
 public class Lane : MonoBehaviour
 {
-    public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
+    public Melanchall.DryWetMidi.MusicTheory.NoteName noteInput;
     private InputAction input;
     
     public GameObject notePrefab;
@@ -17,12 +18,21 @@ public class Lane : MonoBehaviour
     
     private int spawnIndex = 0;
     private int inputIndex = 0;
-
+    
+    [Header("Hit Positions")]
     public Transform laneHitPos;
     public Transform laneDespawnPos;
     
     public Vector3 laneHit;
     public Vector3 laneDespawn;
+
+    [Header("Visual Hit Response")] 
+    public GameObject laneHitDisplay;
+    private SpriteRenderer _laneHitSprite;
+
+    public Color defaultHitPointColour;
+    public Color hitColour;
+    
 
 
     private void Awake()
@@ -34,20 +44,21 @@ public class Lane : MonoBehaviour
         
         laneHit = laneHitPos.position;
         laneDespawn = laneDespawnPos.position;
+        _laneHitSprite = laneHitDisplay.GetComponent<SpriteRenderer>();
     }
     
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {
         foreach (var note in array)
         {
-            if (note.NoteName == noteRestriction)
+            if (note.NoteName == noteInput)
             {
                 var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongManager.midiFile.GetTempoMap());
                 timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
             }
         }
     }
-
+    
     private void Update()
     {
         if (spawnIndex < timeStamps.Count)
@@ -70,7 +81,7 @@ public class Lane : MonoBehaviour
             double timeStamp =  timeStamps[inputIndex];
             double marginOfError = SongManager.Instance.marginOfError;
             double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInSeconds / 1000.0);
-
+    
             if (input.triggered)
             {
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
@@ -94,17 +105,32 @@ public class Lane : MonoBehaviour
                 inputIndex++;
             }
         }
+
+        if (input.triggered)
+        {
+            //Change colour of hit line for the lane
+            StartCoroutine(HitColour());
+        }
     }
 
     private void Hit()
     {
         //Play hit sound/effects
-        ScoreManager.Hit();
+        ScoreManager.Instance.Hit();
     }
 
     private void Miss()
     {
         //Play miss sound/effects
-        ScoreManager.Miss();
+        ScoreManager.Instance.Miss();
+    }
+
+
+    private IEnumerator HitColour()
+    {
+        Debug.Log("button pressed");
+        _laneHitSprite.color = Color.yellow;
+        yield return new WaitForSeconds(0.1f);
+        _laneHitSprite.color = Color.white;
     }
 }
