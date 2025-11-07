@@ -8,14 +8,17 @@ public class ScoreManager : MonoBehaviour
     public AudioSource missSound;
     public TMPro.TextMeshProUGUI scoreText;
     private static int comboScore;
-
-    
+    public GameObject scoreBoard;
+    private bool songFinished = false;
+    public TMPro.TextMeshProUGUI scoreBoardText;
 
     private void Start()
     {
         Instance = this;
         
         comboScore = 0;
+
+        scoreBoard.SetActive(false);
     }
 
     public static void Hit()
@@ -33,5 +36,11 @@ public class ScoreManager : MonoBehaviour
     private void Update()
     {
         scoreText.text = comboScore.ToString();
+
+        if (SongManager.GetAudioSourceTime() >= SongManager.Instance.audioSource.clip.length)
+        {
+            scoreBoard.SetActive(true);
+            scoreBoardText.text = ($"Score: {scoreText.ToString()}");
+        }
     }
 }
