@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     public TMPro.TextMeshProUGUI scoreText;
     private static int comboScore;
 
+    
+
     private void Start()
     {
         Instance = this;

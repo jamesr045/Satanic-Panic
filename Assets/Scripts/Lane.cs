@@ -14,20 +14,28 @@ public class Lane : MonoBehaviour
 
     private List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
-
+    
     private int spawnIndex = 0;
     private int inputIndex = 0;
 
-    private void Start()
+    public Transform laneHitPos;
+    public Transform laneDespawnPos;
+    
+    public Vector3 laneHit;
+    public Vector3 laneDespawn;
+
+
+    private void Awake()
     {
         if (this.CompareTag("Lane 1")) input = InputSystem.actions.FindAction("Lane 1 Press");
         if (this.CompareTag("Lane 2")) input = InputSystem.actions.FindAction("Lane 2 Press");
         if (this.CompareTag("Lane 3")) input = InputSystem.actions.FindAction("Lane 3 Press");
         if (this.CompareTag("Lane 4")) input = InputSystem.actions.FindAction("Lane 4 Press");
-
+        
+        laneHit = laneHitPos.position;
+        laneDespawn = laneDespawnPos.position;
     }
-
-
+    
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {
         foreach (var note in array)
@@ -46,9 +54,13 @@ public class Lane : MonoBehaviour
         {
             if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTimeUntilHit)
             {
-                var note = Instantiate(notePrefab, transform);
-                notes.Add(note.GetComponent<Note>());
-                note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
+                var note = Instantiate(notePrefab, transform.position,  notePrefab.transform.rotation);
+                var noteScript = note.GetComponent<Note>();
+                notes.Add(noteScript);
+                noteScript.assignedTime = (float)timeStamps[spawnIndex];
+                noteScript.spawnPos = transform.position;
+                noteScript.despawnPos = laneDespawn;
+                
                 spawnIndex++;
             }
         }
@@ -71,6 +83,7 @@ public class Lane : MonoBehaviour
                 else
                 {
                     print($"Missed {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    Miss();
                 }
             }
 

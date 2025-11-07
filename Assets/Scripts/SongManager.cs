@@ -12,6 +12,7 @@ public class SongManager : MonoBehaviour
     public static SongManager Instance;
     public AudioSource audioSource;
     public Lane[] lanes;
+    public Transform rhythmTrackPos;
     
     public float songDelayInSeconds;
     public double marginOfError;
@@ -20,23 +21,16 @@ public class SongManager : MonoBehaviour
 
     public string songFileLocation;
     public float noteTimeUntilHit;
-    public float noteSpawnY;
-    public float noteTapY;
-    public float noteDespawnY
-    {
-        get
-        {
-            return noteTapY - (noteSpawnY - noteTapY);
-        }
-    }
     
     public static MidiFile midiFile;
-
-
+    
+    
     private void Start()
     {
         Instance = this;
-
+        
+        
+        
         if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
         {
             StartCoroutine(ReadFromWebsite());
@@ -46,7 +40,7 @@ public class SongManager : MonoBehaviour
             ReadFromFile();
         }
     }
-
+    
     private IEnumerator ReadFromWebsite()
     {
         using (UnityWebRequest www = UnityWebRequest.Get(Application.streamingAssetsPath + "/" + songFileLocation))
@@ -68,13 +62,13 @@ public class SongManager : MonoBehaviour
             }
         }
     }
-
+    
     private void ReadFromFile()
     {
         midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + songFileLocation);
         GetDataFromMidi();
     }
-
+    
     public void GetDataFromMidi()
     {
         var notes = midiFile.GetNotes();
