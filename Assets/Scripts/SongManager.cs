@@ -28,6 +28,8 @@ public class SongManager : MonoBehaviour
     private void Start()
     {
         Instance = this;
+        
+        StartRhythmGame();
     }
 
     public void StartRhythmGame()

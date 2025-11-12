@@ -4,7 +4,7 @@ public class Note : MonoBehaviour
 {
     private double timeCreated;
 
-    public float assignedTime;
+    public float assignedOnTime;
     
     private SpriteRenderer spriteRenderer;
     
@@ -13,7 +13,7 @@ public class Note : MonoBehaviour
     
      void Start()
     {
-        timeCreated = assignedTime - SongManager.Instance.noteTimeUntilHit;
+        timeCreated = assignedOnTime - SongManager.Instance.noteTimeUntilHit;
         spriteRenderer = GetComponent<SpriteRenderer>();
         
         transform.rotation = SongManager.Instance.rhythmTrackPos.rotation;

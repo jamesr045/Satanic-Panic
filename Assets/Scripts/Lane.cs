@@ -14,9 +14,9 @@ public class Lane : MonoBehaviour
     public GameObject notePrefab;
 
     private List<Note> notes = new List<Note>();
-    public List<double> timeStamps = new List<double>();
+    public List<Tuple<double, double>> timeStamps = new List<Tuple<double, double>>();
     
-    private int spawnIndex = 0;
+    private int spawnIndex = 0; 
     private int inputIndex = 0;
     
     [Header("Hit Positions")]
@@ -53,9 +53,15 @@ public class Lane : MonoBehaviour
         {
             if (note.NoteName == noteInput)
             {
-                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongManager.midiFile.GetTempoMap());
-                timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
+                var tempoMap = SongManager.midiFile.GetTempoMap();
+                var noteOnMetricTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.GetTimedNoteOnEvent().Time, tempoMap);
+                var noteOffMetricTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.GetTimedNoteOffEvent().Time, tempoMap);
+                
+                timeStamps.Add(new Tuple<double, double>(
+                    (double)noteOnMetricTime.Minutes * 60f + noteOnMetricTime.Seconds + (double)noteOnMetricTime.Milliseconds / 1000f,
+                    (double)noteOffMetricTime.Minutes * 60f + noteOffMetricTime.Seconds + (double)noteOffMetricTime.Milliseconds / 1000f));
             }
+            
         }
     }
     
@@ -63,12 +69,12 @@ public class Lane : MonoBehaviour
     {
         if (spawnIndex < timeStamps.Count)
         {
-            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTimeUntilHit)
+            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex].Item1 - SongManager.Instance.noteTimeUntilHit)
             {
                 var note = Instantiate(notePrefab, transform.position,  notePrefab.transform.rotation);
                 var noteScript = note.GetComponent<Note>();
                 notes.Add(noteScript);
-                noteScript.assignedTime = (float)timeStamps[spawnIndex];
+                noteScript.assignedOnTime = (float)timeStamps[spawnIndex].Item1;
                 noteScript.spawnPos = transform.position;
                 noteScript.despawnPos = laneDespawn;
                 
@@ -78,13 +84,13 @@ public class Lane : MonoBehaviour
 
         if (inputIndex < timeStamps.Count)
         {
-            double timeStamp =  timeStamps[inputIndex];
+            double onTimeStamp =  timeStamps[inputIndex].Item1;
             double marginOfError = SongManager.Instance.marginOfError;
             double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInSeconds / 1000.0);
     
             if (input.triggered)
             {
-                if (Math.Abs(audioTime - timeStamp) < marginOfError)
+                if (Math.Abs(audioTime - onTimeStamp) < marginOfError)
                 {
                     Hit();
                     print($"Hit on {inputIndex} note");
@@ -93,12 +99,12 @@ public class Lane : MonoBehaviour
                 }
                 else
                 {
-                    print($"Missed {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    print($"Missed {inputIndex} note with {Math.Abs(audioTime - onTimeStamp)} delay");
                     Miss();
                 }
             }
 
-            if (timeStamp + marginOfError <= audioTime)
+            if (onTimeStamp + marginOfError <= audioTime)
             {
                 Miss();
                 print($"Missed {inputIndex} note");
