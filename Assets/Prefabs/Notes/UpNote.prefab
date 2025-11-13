@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af810ba5dbe7b02438e26503a992d5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assignedTime: 0
+  isHoldNote: 0
+  releaseNotePointPrefab: {fileID: 2023760515124336186, guid: 97b2c7d12c843514c87130a889f8eece, type: 3}
+  assignedOnTime: 0
+  assignedOffTime: 0
   spawnPos: {x: 0, y: 0, z: 0}
   despawnPos: {x: 0, y: 0, z: 0}
 --- !u!212 &2955376216238545997

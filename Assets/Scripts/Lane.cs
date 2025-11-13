@@ -32,7 +32,6 @@ public class Lane : MonoBehaviour
 
     public Color defaultHitPointColour;
     public Color hitColour;
-    
 
 
     private void Awake()
@@ -74,41 +73,103 @@ public class Lane : MonoBehaviour
                 var note = Instantiate(notePrefab, transform.position,  notePrefab.transform.rotation);
                 var noteScript = note.GetComponent<Note>();
                 notes.Add(noteScript);
+
+                //Normal notes
                 noteScript.assignedOnTime = (float)timeStamps[spawnIndex].Item1;
                 noteScript.spawnPos = transform.position;
-                noteScript.despawnPos = laneDespawn;
+                noteScript.despawnPos = laneDespawn; 
                 
                 spawnIndex++;
+                
+                if (timeStamps[inputIndex].Item2 - timeStamps[inputIndex].Item1 > 1.1) // Check if it is a hold note
+                {
+                    noteScript.isHoldNote = true;
+                    noteScript.assignedOffTime = (float)timeStamps[inputIndex].Item2;
+                }
             }
         }
 
         if (inputIndex < timeStamps.Count)
         {
-            double onTimeStamp =  timeStamps[inputIndex].Item1;
-            double marginOfError = SongManager.Instance.marginOfError;
-            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInSeconds / 1000.0);
-    
-            if (input.triggered)
+            if (timeStamps[inputIndex].Item2 - timeStamps[inputIndex].Item1 <= 1.1)
             {
-                if (Math.Abs(audioTime - onTimeStamp) < marginOfError)
+                //Normal notes
+                double onTimeStamp = timeStamps[inputIndex].Item1;
+                double marginOfError = SongManager.Instance.marginOfError;
+                double audioTime = SongManager.GetAudioSourceTime() -
+                                   (SongManager.Instance.inputDelayInSeconds / 1000.0);
+
+                if (input.WasPressedThisFrame())
                 {
-                    Hit();
-                    print($"Hit on {inputIndex} note");
-                    Destroy(notes[inputIndex].gameObject);
+                    if (Math.Abs(audioTime - onTimeStamp) < marginOfError)
+                    {
+                        Hit();
+                        print($"Hit on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        inputIndex++;
+                    }
+                    else
+                    {
+                        print($"Missed {inputIndex} note with {Math.Abs(audioTime - onTimeStamp)} delay");
+                        Miss();
+                    }
+                }
+
+                if (onTimeStamp + marginOfError <= audioTime)
+                {
+                    Miss();
+                    print($"Missed {inputIndex} note");
                     inputIndex++;
                 }
-                else
-                {
-                    print($"Missed {inputIndex} note with {Math.Abs(audioTime - onTimeStamp)} delay");
-                    Miss();
-                }
             }
-
-            if (onTimeStamp + marginOfError <= audioTime)
+            else
             {
-                Miss();
-                print($"Missed {inputIndex} note");
-                inputIndex++;
+                //Hold notes
+                double onTimeStamp = timeStamps[inputIndex].Item1;
+                double offTimeStamp = timeStamps[inputIndex].Item2;
+                double marginOfError = SongManager.Instance.marginOfError;
+                double audioTime = SongManager.GetAudioSourceTime() -
+                                   (SongManager.Instance.inputDelayInSeconds / 1000.0);
+
+                if (input.WasPressedThisFrame())
+                {
+                    if (Math.Abs(audioTime - onTimeStamp) < marginOfError)
+                    {
+                        //Start hold note
+                        Hit();
+                        print($"Started hold on {inputIndex} note");
+                    }
+                    else
+                    {
+                        print($"Missed {inputIndex} note with {Math.Abs(audioTime - onTimeStamp)} delay");
+                        Miss();
+                    }
+                }
+
+                
+                if (input.WasReleasedThisFrame())
+                {
+                    if (Math.Abs(audioTime - offTimeStamp) < marginOfError)
+                    {
+                        Hit();
+                        print($"Finished hold on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        DestroyImmediate(notes[inputIndex].gameObject.GetComponent<Note>().releaseNotePointPrefab);
+                        inputIndex++;
+                    }
+                    else
+                    {
+                        print($"Missed {inputIndex} note with {Math.Abs(audioTime - onTimeStamp)} delay");
+                        Miss();
+                    }
+                }
+                
+                if (offTimeStamp + marginOfError <= audioTime)
+                {
+                    Miss();
+                    print($"Missed {inputIndex} hold note");
+                    inputIndex++;
+                }
             }
         }
 

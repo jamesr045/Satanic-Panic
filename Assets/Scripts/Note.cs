@@ -2,18 +2,28 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    private double timeCreated;
+    private double _timeCreated;
+    private double _releaseNoteTimeCreated;
+
+    private bool _releaseNoteSpawned = false;
+
+    public bool isHoldNote = false;
+    public GameObject releaseNotePointPrefab;
+    private GameObject _releaseNotePoint;
 
     public float assignedOnTime;
+    public float assignedOffTime;
     
     private SpriteRenderer spriteRenderer;
     
     public Vector3 spawnPos;
     public Vector3 despawnPos;
     
+    
      void Start()
     {
-        timeCreated = assignedOnTime - SongManager.Instance.noteTimeUntilHit;
+        _timeCreated = assignedOnTime - SongManager.Instance.noteTimeUntilHit;
+        _releaseNoteTimeCreated = assignedOffTime - SongManager.Instance.noteTimeUntilHit;
         spriteRenderer = GetComponent<SpriteRenderer>();
         
         transform.rotation = SongManager.Instance.rhythmTrackPos.rotation;
@@ -33,22 +43,40 @@ public class Note : MonoBehaviour
         // float scale = Mathf.Lerp(minSize, maxSize, normalizedDistance);
         //
         // transform.localScale = new Vector3(scale, scale, scale);
+
         
         
         
         float spawnDelay = SongManager.Instance.songDelayInSeconds - SongManager.Instance.noteTimeUntilHit;
         
-        double timeSinceCreation = spawnDelay > 0 && timeCreated < 0 ? (Time.timeSinceLevelLoad - spawnDelay) + timeCreated : SongManager.GetAudioSourceTime() - timeCreated;
-        float t = (float)(timeSinceCreation / (SongManager.Instance.noteTimeUntilHit * 2));
+        double timeSinceCreation = spawnDelay > 0 && _timeCreated < 0 ? (Time.timeSinceLevelLoad - spawnDelay) + _timeCreated : SongManager.GetAudioSourceTime() - _timeCreated;
+        double releaseNoteTimeSinceCreation = spawnDelay > 0 && _releaseNoteTimeCreated < 0 ? (Time.timeSinceLevelLoad - spawnDelay) + _releaseNoteTimeCreated : SongManager.GetAudioSourceTime() - _releaseNoteTimeCreated;
         
-        if (t > 1)
+        float t = (float)(timeSinceCreation / (SongManager.Instance.noteTimeUntilHit * 2));
+        float releaseT = (float)(releaseNoteTimeSinceCreation / (SongManager.Instance.noteTimeUntilHit * 2));
+        
+        if (isHoldNote && _releaseNoteSpawned == false)
         {
+            _releaseNoteSpawned = true;
+            _releaseNotePoint = Instantiate(releaseNotePointPrefab, spawnPos, transform.rotation);
+        }
+        
+        if (!isHoldNote && t > 1)
+        {
+            Destroy(gameObject);
+        }
+        else if (isHoldNote && releaseT > 1)
+        {
+            Destroy(_releaseNotePoint);
             Destroy(gameObject);
         }
         else
         {
              transform.position = Vector3.Lerp(spawnPos, despawnPos, t);
              spriteRenderer.enabled = true;
+             
+             if (isHoldNote) _releaseNotePoint.GetComponent<SpriteRenderer>().enabled = true;
+             if (isHoldNote) _releaseNotePoint.transform.position = Vector3.Lerp(spawnPos, despawnPos, releaseT);
         }
     }
 }

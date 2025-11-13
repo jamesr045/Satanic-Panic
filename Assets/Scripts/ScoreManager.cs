@@ -12,8 +12,6 @@ public class ScoreManager : MonoBehaviour
     
     private static int _comboScore;
 
-    
-
     private void Start()
     {
         Instance = this;
