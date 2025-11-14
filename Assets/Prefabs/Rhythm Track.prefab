@@ -491,9 +491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62acbd0e0121ecc40ad8a8e18b14afd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteInput: 9
+  noteInput: 7
   notePrefab: {fileID: 2694048003769215430, guid: e8192bfbf6063764f9a620e507ed5cfe, type: 3}
-  timeStamps: []
   laneHitPos: {fileID: 1424782377326060419}
   laneDespawnPos: {fileID: 6055927347060704623}
   laneHit: {x: 0, y: 0, z: 0}
@@ -607,9 +606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62acbd0e0121ecc40ad8a8e18b14afd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteInput: 7
+  noteInput: 9
   notePrefab: {fileID: 2023760515124336186, guid: 27f8cb6c0d3870144b7258fc3fbd5dff, type: 3}
-  timeStamps: []
   laneHitPos: {fileID: 7499641314569403057}
   laneDespawnPos: {fileID: 4519685872435074574}
   laneHit: {x: 0, y: 0, z: 0}
@@ -692,9 +690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62acbd0e0121ecc40ad8a8e18b14afd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteInput: 11
+  noteInput: 5
   notePrefab: {fileID: 5851650602399856743, guid: 4322301f69e9df249a15abdeb552010f, type: 3}
-  timeStamps: []
   laneHitPos: {fileID: 3110422848918357177}
   laneDespawnPos: {fileID: 8514748669574580477}
   laneHit: {x: 0, y: 0, z: 0}
@@ -867,9 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62acbd0e0121ecc40ad8a8e18b14afd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteInput: 5
+  noteInput: 11
   notePrefab: {fileID: 2419410138575324419, guid: 9db4c14beb3e34c4786d58b1aaaf6958, type: 3}
-  timeStamps: []
   laneHitPos: {fileID: 7681624180920123741}
   laneDespawnPos: {fileID: 2552596296278481047}
   laneHit: {x: 0, y: 0, z: 0}
