@@ -67,7 +67,7 @@ public class Note : MonoBehaviour
         }
         else if (isHoldNote && releaseT > 1)
         {
-            Destroy(_releaseNotePoint);
+            DestroyImmediate(_releaseNotePoint);
             Destroy(gameObject);
         }
         else

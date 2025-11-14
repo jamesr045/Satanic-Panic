@@ -1037,7 +1037,7 @@
                 {
                     "name": "",
                     "id": "34437ccd-ade2-4f1a-b573-47347f865458",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1048,7 +1048,7 @@
                 {
                     "name": "",
                     "id": "35b8f16d-b56f-4f1a-9013-18196076c531",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1058,19 +1058,8 @@
                 },
                 {
                     "name": "",
-                    "id": "18dc6bd7-62c5-4419-85d0-291aa2431baf",
-                    "path": "<Keyboard>/9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Lane 1 Press",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d9631b33-3699-4d7a-9106-df43218a3245",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1081,7 +1070,7 @@
                 {
                     "name": "",
                     "id": "5535a038-86d1-4495-bbc6-c72cd2d2938b",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1091,19 +1080,8 @@
                 },
                 {
                     "name": "",
-                    "id": "46cde2e7-70a5-493c-943a-06c191ff1bb0",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Lane 2 Press",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ca74b82d-e576-4e71-8b7c-f10ad497edbd",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1114,7 +1092,7 @@
                 {
                     "name": "",
                     "id": "b4066e34-bca7-4873-a5d2-77697038c616",
-                    "path": "<Keyboard>/j",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1124,19 +1102,8 @@
                 },
                 {
                     "name": "",
-                    "id": "9e38990b-c178-4851-845d-8764ae85a352",
-                    "path": "<Keyboard>/j",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Lane 3 Press",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c814e169-31a6-4c49-a69a-0f9ad637afad",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1147,21 +1114,10 @@
                 {
                     "name": "",
                     "id": "d47b4864-d29a-4a5f-a8fc-8a0ddc6457fc",
-                    "path": "<Keyboard>/k",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Lane 4 Press",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ecc96fa0-f21a-4724-bb41-1fad21606602",
-                    "path": "<Keyboard>/n",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
                     "action": "Lane 4 Press",
                     "isComposite": false,
                     "isPartOfComposite": false
