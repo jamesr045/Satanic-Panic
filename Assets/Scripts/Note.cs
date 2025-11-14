@@ -9,7 +9,7 @@ public class Note : MonoBehaviour
 
     public bool isHoldNote = false;
     public GameObject releaseNotePointPrefab;
-    private GameObject _releaseNotePoint;
+    public GameObject _releaseNotePoint;
 
     public float assignedOnTime;
     public float assignedOffTime;
@@ -31,22 +31,7 @@ public class Note : MonoBehaviour
 
     
     void Update()
-    {
-        // //Scaling things in 2D view
-        // float distanceFromScreenTop = Vector3.Distance(spawnPos, transform.position);
-        // float minDistance = 0f;
-        // float maxDistance = 17f;
-        // float minSize = 0;
-        // float maxSize = 0.35f;
-        //
-        // float normalizedDistance = Mathf.InverseLerp(minDistance, maxDistance, distanceFromScreenTop);
-        // float scale = Mathf.Lerp(minSize, maxSize, normalizedDistance);
-        //
-        // transform.localScale = new Vector3(scale, scale, scale);
-
-        
-        
-        
+    {       
         float spawnDelay = SongManager.Instance.songDelayInSeconds - SongManager.Instance.noteTimeUntilHit;
         
         double timeSinceCreation = spawnDelay > 0 && _timeCreated < 0 ? (Time.timeSinceLevelLoad - spawnDelay) + _timeCreated : SongManager.GetAudioSourceTime() - _timeCreated;
@@ -67,7 +52,7 @@ public class Note : MonoBehaviour
         }
         else if (isHoldNote && releaseT > 1)
         {
-            DestroyImmediate(_releaseNotePoint);
+            Destroy(_releaseNotePoint);
             Destroy(gameObject);
         }
         else

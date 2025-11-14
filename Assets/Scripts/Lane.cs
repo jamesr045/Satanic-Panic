@@ -131,6 +131,8 @@ public class Lane : MonoBehaviour
                 double audioTime = SongManager.GetAudioSourceTime() -
                                    (SongManager.Instance.inputDelayInSeconds / 1000.0);
 
+                notes[inputIndex].GetComponent<SpriteRenderer>().color = Color.cyan;
+
                 if (input.WasPressedThisFrame())
                 {
                     if (Math.Abs(audioTime - onTimeStamp) < marginOfError)
@@ -138,6 +140,7 @@ public class Lane : MonoBehaviour
                         //Start hold note
                         Hit();
                         print($"Started hold on {inputIndex} note");
+                        //notes[inputIndex].GetComponent <SpriteRenderer>().enabled = false;
                     }
                     else
                     {
@@ -154,7 +157,7 @@ public class Lane : MonoBehaviour
                         Hit();
                         print($"Finished hold on {inputIndex} note");
                         Destroy(notes[inputIndex].gameObject);
-                        DestroyImmediate(notes[inputIndex].gameObject.GetComponent<Note>().releaseNotePointPrefab);
+                        //notes[inputIndex].GetComponent<Note>()._releaseNotePoint.SetActive(false);
                         inputIndex++;
                     }
                     else
