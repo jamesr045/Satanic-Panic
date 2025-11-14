@@ -9,22 +9,26 @@ public class Note : MonoBehaviour
 
     public bool isHoldNote = false;
     public GameObject releaseNotePointPrefab;
-    public GameObject _releaseNotePoint;
+    public GameObject releaseNotePoint;
+    public bool pauseNote = false;
 
     public float assignedOnTime;
     public float assignedOffTime;
     
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
     
     public Vector3 spawnPos;
     public Vector3 despawnPos;
+
+    private LineRenderer _lineRenderer;
     
     
      void Start()
     {
         _timeCreated = assignedOnTime - SongManager.Instance.noteTimeUntilHit;
         _releaseNoteTimeCreated = assignedOffTime - SongManager.Instance.noteTimeUntilHit;
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer.enabled = true;
         
         transform.rotation = SongManager.Instance.rhythmTrackPos.rotation;
     }
@@ -43,7 +47,27 @@ public class Note : MonoBehaviour
         if (isHoldNote && _releaseNoteSpawned == false)
         {
             _releaseNoteSpawned = true;
-            _releaseNotePoint = Instantiate(releaseNotePointPrefab, spawnPos, transform.rotation);
+            releaseNotePoint = Instantiate(releaseNotePointPrefab, spawnPos, transform.rotation);
+            
+            // Add a LineRenderer component
+            _lineRenderer = gameObject.AddComponent<LineRenderer>();
+
+            // Set the material
+            _lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+
+            // Set the color
+            _lineRenderer.startColor = Color.cyan;
+            _lineRenderer.endColor = Color.cyan;
+
+            // Set the width
+            _lineRenderer.startWidth = 0.2f;
+            _lineRenderer.endWidth = 0.2f;
+
+            // Set the number of vertices
+            _lineRenderer.positionCount = 2;
+
+            //Set order in layer
+            _lineRenderer.sortingOrder = 3;
         }
         
         if (!isHoldNote && t > 1)
@@ -52,16 +76,22 @@ public class Note : MonoBehaviour
         }
         else if (isHoldNote && releaseT > 1)
         {
-            Destroy(_releaseNotePoint);
+            Destroy(releaseNotePoint);
             Destroy(gameObject);
         }
         else
         {
-             transform.position = Vector3.Lerp(spawnPos, despawnPos, t);
-             spriteRenderer.enabled = true;
-             
-             if (isHoldNote) _releaseNotePoint.GetComponent<SpriteRenderer>().enabled = true;
-             if (isHoldNote) _releaseNotePoint.transform.position = Vector3.Lerp(spawnPos, despawnPos, releaseT);
+            if (!pauseNote) transform.position = Vector3.Lerp(spawnPos, despawnPos, t);
+
+             if (isHoldNote)
+             {
+                 releaseNotePoint.GetComponent<SpriteRenderer>().enabled = true;
+                 releaseNotePoint.transform.position = Vector3.Lerp(spawnPos, despawnPos, releaseT);
+                 
+                 // Set the positions of the vertices
+                 _lineRenderer.SetPosition(0, transform.position);
+                 _lineRenderer.SetPosition(1, releaseNotePoint.transform.position);
+             }
         }
     }
 }

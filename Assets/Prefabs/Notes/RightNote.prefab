@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldNote: 0
   releaseNotePointPrefab: {fileID: 2023760515124336186, guid: 97b2c7d12c843514c87130a889f8eece, type: 3}
+  releaseNotePoint: {fileID: 0}
+  pauseNote: 0
   assignedOnTime: 0
   assignedOffTime: 0
   spawnPos: {x: 0, y: 0, z: 0}
@@ -94,7 +96,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9934075, g: 1, b: 0, a: 1}
   m_FlipX: 0

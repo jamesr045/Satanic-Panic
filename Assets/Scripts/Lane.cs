@@ -14,7 +14,7 @@ public class Lane : MonoBehaviour
     public GameObject notePrefab;
 
     private List<Note> notes = new List<Note>();
-    public List<Tuple<double, double>> timeStamps = new List<Tuple<double, double>>();
+    public List<Tuple<double, double, bool>> timeStamps = new List<Tuple<double, double, bool>>();
     
     private int spawnIndex = 0; 
     private int inputIndex = 0;
@@ -55,12 +55,12 @@ public class Lane : MonoBehaviour
                 var tempoMap = SongManager.midiFile.GetTempoMap();
                 var noteOnMetricTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.GetTimedNoteOnEvent().Time, tempoMap);
                 var noteOffMetricTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.GetTimedNoteOffEvent().Time, tempoMap);
+
                 
-                timeStamps.Add(new Tuple<double, double>(
+                timeStamps.Add(new Tuple<double, double, bool>(
                     (double)noteOnMetricTime.Minutes * 60f + noteOnMetricTime.Seconds + (double)noteOnMetricTime.Milliseconds / 1000f,
-                    (double)noteOffMetricTime.Minutes * 60f + noteOffMetricTime.Seconds + (double)noteOffMetricTime.Milliseconds / 1000f));
+                    (double)noteOffMetricTime.Minutes * 60f + noteOffMetricTime.Seconds + (double)noteOffMetricTime.Milliseconds / 1000f, note.Length > 128));
             }
-            
         }
     }
     
@@ -79,19 +79,25 @@ public class Lane : MonoBehaviour
                 noteScript.spawnPos = transform.position;
                 noteScript.despawnPos = laneDespawn; 
                 
-                spawnIndex++;
                 
-                if (timeStamps[inputIndex].Item2 - timeStamps[inputIndex].Item1 > 1.1) // Check if it is a hold note
+                if (timeStamps[spawnIndex].Item3) // Check if it is a hold note
                 {
                     noteScript.isHoldNote = true;
-                    noteScript.assignedOffTime = (float)timeStamps[inputIndex].Item2;
+                    
+                    Debug.Log("Hold note");
+                    noteScript.assignedOffTime = (float)timeStamps[spawnIndex].Item2;
+                    
+                    note.GetComponent<SpriteRenderer>().color = Color.cyan;
                 }
+                
+                spawnIndex++;
+                
             }
         }
 
         if (inputIndex < timeStamps.Count)
         {
-            if (timeStamps[inputIndex].Item2 - timeStamps[inputIndex].Item1 <= 1.1)
+            if (!timeStamps[inputIndex].Item3)
             {
                 //Normal notes
                 double onTimeStamp = timeStamps[inputIndex].Item1;
@@ -131,7 +137,6 @@ public class Lane : MonoBehaviour
                 double audioTime = SongManager.GetAudioSourceTime() -
                                    (SongManager.Instance.inputDelayInSeconds / 1000.0);
 
-                notes[inputIndex].GetComponent<SpriteRenderer>().color = Color.cyan;
 
                 if (input.WasPressedThisFrame())
                 {
@@ -140,7 +145,8 @@ public class Lane : MonoBehaviour
                         //Start hold note
                         Hit();
                         print($"Started hold on {inputIndex} note");
-                        //notes[inputIndex].GetComponent <SpriteRenderer>().enabled = false;
+                        notes[inputIndex].GetComponent<SpriteRenderer>().enabled = false;
+                        notes[inputIndex].pauseNote = true;
                     }
                     else
                     {
@@ -157,12 +163,14 @@ public class Lane : MonoBehaviour
                         Hit();
                         print($"Finished hold on {inputIndex} note");
                         Destroy(notes[inputIndex].gameObject);
-                        //notes[inputIndex].GetComponent<Note>()._releaseNotePoint.SetActive(false);
+                        Destroy(notes[inputIndex].releaseNotePoint.gameObject);
                         inputIndex++;
                     }
                     else
                     {
                         print($"Missed {inputIndex} note with {Math.Abs(audioTime - onTimeStamp)} delay");
+                        notes[inputIndex].pauseNote = false;
+                        notes[inputIndex].GetComponent<SpriteRenderer>().enabled = true;
                         Miss();
                     }
                 }
