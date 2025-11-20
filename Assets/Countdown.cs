@@ -7,12 +7,15 @@ public class Countdown : MonoBehaviour
     public TextMeshProUGUI text;
     public Image bgDim;
 
-    private float countdownTime;
+    private float _countdownTime;
+    private bool _startCountdown = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void StartCountdown()
     {
-        countdownTime = 4.2f;
+        _startCountdown = true;
+        
+        _countdownTime = 4.2f;
 
         bgDim.enabled = true;
         text.enabled = true;
@@ -21,14 +24,17 @@ public class Countdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        countdownTime -= Time.deltaTime;
-
-        text.text = ((int)countdownTime).ToString();
-
-        if (countdownTime <= 1)
+        if (_startCountdown)
         {
-            bgDim.enabled = false;
-            text.enabled = false;
+            _countdownTime -= Time.deltaTime;
+
+            text.text = ((int)_countdownTime).ToString();
+
+            if (_countdownTime <= 1)
+            {
+                bgDim.enabled = false;
+                text.enabled = false;
+            }
         }
     }
 }

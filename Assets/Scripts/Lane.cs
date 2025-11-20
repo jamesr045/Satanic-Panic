@@ -52,7 +52,7 @@ public class Lane : MonoBehaviour
         {
             if (note.NoteName == noteInput)
             {
-                var tempoMap = SongManager.midiFile.GetTempoMap();
+                var tempoMap = SongManager.MidiFile.GetTempoMap();
                 var noteOnMetricTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.GetTimedNoteOnEvent().Time, tempoMap);
                 var noteOffMetricTime = TimeConverter.ConvertTo<MetricTimeSpan>(note.GetTimedNoteOffEvent().Time, tempoMap);
 

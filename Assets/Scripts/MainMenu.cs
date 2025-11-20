@@ -5,13 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
- public void PlayGame()
- {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
- }
+    public GameObject mainMenuCanvas;
+    
+     public void PlaySunsetSupernova()
+     {
+        SongManager.Instance.StartRhythmGame();
+        SongManager.Instance.currentSong = SongManager.Songs.SunsetSupernova;
+        
+        mainMenuCanvas.SetActive(false);
+     }
+     
+     public void PlaySubways()
+     {
+         SongManager.Instance.StartRhythmGame();
+         SongManager.Instance.currentSong = SongManager.Songs.Subways;
+         
+         mainMenuCanvas.SetActive(false);
+     }
+     
+     public void PlayNextStopPurgatory()
+     {
+         SongManager.Instance.StartRhythmGame();
+         SongManager.Instance.currentSong = SongManager.Songs.NextStopPurgatory;
+         
+         mainMenuCanvas.SetActive(false);
+     }
 
- public void QuitGame()
- {
-    Application.Quit();
- }
+     public void QuitGame()
+     {
+        Application.Quit();
+     }
 }

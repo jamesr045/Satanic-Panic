@@ -10,9 +10,13 @@ using Melanchall.DryWetMidi.Interaction;
 public class SongManager : MonoBehaviour
 {
     public static SongManager Instance;
+    
+    [Header("AudioSources")]
     public AudioSource backgroundAudioSource;
     public AudioSource characterPlayingAudioSource;
     public AudioSource characterMissingAudioSource;
+    
+    
     public enum Songs
     {
         SunsetSupernova,
@@ -20,29 +24,37 @@ public class SongManager : MonoBehaviour
         NextStopPurgatory
     }
 
+    [Header("Song Selection")]
     public Songs currentSong;
+    
+    [Header("Song Files")]
     public AudioClip[] backgroundSongs;
     public AudioClip[] characterPlayingSongs;
     public AudioClip[] characterMissingSongs;
     public string[] midiFilePaths;
+    public string songFileLocation;
+    public static MidiFile MidiFile;
+    
+    [Header("Selected Song Files")]
     public AudioClip selectedSongBg;
     public AudioClip selectedSongHit;
     public AudioClip selectedSongMiss;
-    public Lane[] lanes;
-    public Transform rhythmTrackPos;
     
+    [Header("Lanes")]
+    public Lane[] lanes;
+    
+    public Transform rhythmTrackPos;
+    public Countdown countdown;
+    
+    [Header("Settings")]
     public float songDelayInSeconds;
     public double okayMarginOfError;
     public double goodMarginOfError;
     public double perfectMarginOfError;
-    
-    
     public float inputDelayInSeconds;
-
-    public string songFileLocation;
     public float noteTimeUntilHit;
     
-    public static MidiFile midiFile;
+
     
     
     private void Start()
@@ -73,12 +85,12 @@ public class SongManager : MonoBehaviour
                 songFileLocation = midiFilePaths[2];
                 break;
         }
-        
-        StartRhythmGame();
     }
 
     public void StartRhythmGame()
     {
+        countdown.StartCountdown();
+        
         if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
         {
             StartCoroutine(ReadFromWebsite());
@@ -104,7 +116,7 @@ public class SongManager : MonoBehaviour
                 byte[] results = www.downloadHandler.data;
                 using (var stream = new MemoryStream(results))
                 {
-                    midiFile = MidiFile.Read(stream);
+                    MidiFile = MidiFile.Read(stream);
                     GetDataFromMidi();
                 }
             }
@@ -113,13 +125,13 @@ public class SongManager : MonoBehaviour
     
     private void ReadFromFile()
     {
-        midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + songFileLocation);
+        MidiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + songFileLocation);
         GetDataFromMidi();
     }
     
     public void GetDataFromMidi()
     {
-        var notes = midiFile.GetNotes();
+        var notes = MidiFile.GetNotes();
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
@@ -148,6 +160,10 @@ public class SongManager : MonoBehaviour
 
     public static double GetAudioSourceTime()
     {
-        return (double)Instance.backgroundAudioSource.timeSamples / Instance.backgroundAudioSource.clip.frequency;
+        if (Instance.backgroundAudioSource.clip != null)
+        {
+            return (double)Instance.backgroundAudioSource.timeSamples / Instance.backgroundAudioSource.clip.frequency;
+        }
+        else return 0;
     }
 }
