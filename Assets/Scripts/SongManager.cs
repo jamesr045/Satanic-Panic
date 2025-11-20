@@ -10,12 +10,32 @@ using Melanchall.DryWetMidi.Interaction;
 public class SongManager : MonoBehaviour
 {
     public static SongManager Instance;
-    public AudioSource audioSource;
+    public AudioSource backgroundAudioSource;
+    public AudioSource characterPlayingAudioSource;
+    public AudioSource characterMissingAudioSource;
+    public enum Songs
+    {
+        SunsetSupernova,
+        Subways,
+        NextStopPurgatory
+    }
+
+    public Songs currentSong;
+    public AudioClip[] backgroundSongs;
+    public AudioClip[] characterPlayingSongs;
+    public AudioClip[] characterMissingSongs;
+    public string[] midiFilePaths;
+    public AudioClip selectedSongBg;
+    public AudioClip selectedSongHit;
+    public AudioClip selectedSongMiss;
     public Lane[] lanes;
     public Transform rhythmTrackPos;
     
     public float songDelayInSeconds;
-    public double marginOfError;
+    public double okayMarginOfError;
+    public double goodMarginOfError;
+    public double perfectMarginOfError;
+    
     
     public float inputDelayInSeconds;
 
@@ -28,6 +48,31 @@ public class SongManager : MonoBehaviour
     private void Start()
     {
         Instance = this;
+
+        switch (currentSong)
+        {
+            case Songs.SunsetSupernova:
+                print("Selected Song: Sunset Supernova");
+                selectedSongBg = backgroundSongs[0];
+                selectedSongHit = characterPlayingSongs[0];
+                selectedSongMiss = characterMissingSongs[0];
+                songFileLocation = midiFilePaths[0];
+                break;
+            case Songs.Subways:
+                print("Selected Song: Subways");
+                selectedSongBg = backgroundSongs[1];
+                selectedSongHit = characterPlayingSongs[1];
+                selectedSongMiss = characterMissingSongs[1];
+                songFileLocation = midiFilePaths[1];
+                break;
+            case Songs.NextStopPurgatory:
+                print("Selected Song: Next Stop: Purgatory");
+                selectedSongBg = backgroundSongs[2];
+                selectedSongHit = characterPlayingSongs[2];
+                selectedSongMiss = characterMissingSongs[2];
+                songFileLocation = midiFilePaths[2];
+                break;
+        }
         
         StartRhythmGame();
     }
@@ -50,7 +95,7 @@ public class SongManager : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
-            if (www.isNetworkError || www.isHttpError)
+            if (www.result is UnityWebRequest.Result.ConnectionError or UnityWebRequest.Result.ProtocolError)
             {
                 Debug.Log(www.error);
             }
@@ -88,11 +133,21 @@ public class SongManager : MonoBehaviour
 
     public void StartSong()
     {
-        audioSource.Play();
+        backgroundAudioSource.clip = selectedSongBg;
+        backgroundAudioSource.Play();
+        
+        characterPlayingAudioSource.clip = selectedSongHit;
+        characterPlayingAudioSource.Play();
+        
+        characterMissingAudioSource.clip =  selectedSongMiss;
+        characterMissingAudioSource.Play();
+
+        characterPlayingAudioSource.mute = false;
+        characterMissingAudioSource.mute = true;
     }
 
     public static double GetAudioSourceTime()
     {
-        return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
+        return (double)Instance.backgroundAudioSource.timeSamples / Instance.backgroundAudioSource.clip.frequency;
     }
 }

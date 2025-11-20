@@ -101,16 +101,32 @@ public class Lane : MonoBehaviour
             {
                 //Normal notes
                 double onTimeStamp = timeStamps[inputIndex].Item1;
-                double marginOfError = SongManager.Instance.marginOfError;
+                double okayMarginOfError = SongManager.Instance.okayMarginOfError;
+                double goodMarginOfError = SongManager.Instance.goodMarginOfError;
+                double perfectMarginOfError = SongManager.Instance.perfectMarginOfError;
                 double audioTime = SongManager.GetAudioSourceTime() -
                                    (SongManager.Instance.inputDelayInSeconds / 1000.0);
 
                 if (input.WasPressedThisFrame())
                 {
-                    if (Math.Abs(audioTime - onTimeStamp) < marginOfError)
+                    if (Math.Abs(audioTime - onTimeStamp) < perfectMarginOfError)
                     {
-                        Hit();
-                        print($"Hit on {inputIndex} note");
+                        PerfectHit();
+                        print($"Perfect hit on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        inputIndex++;
+                    }
+                    else if (Math.Abs(audioTime - onTimeStamp) < goodMarginOfError)
+                    {
+                        GoodHit();
+                        print($"Good hit on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        inputIndex++;
+                    }
+                    else if (Math.Abs(audioTime - onTimeStamp) < okayMarginOfError)
+                    {
+                        OkayHit();
+                        print($"Okay hit on {inputIndex} note");
                         Destroy(notes[inputIndex].gameObject);
                         inputIndex++;
                     }
@@ -121,7 +137,7 @@ public class Lane : MonoBehaviour
                     }
                 }
 
-                if (onTimeStamp + marginOfError <= audioTime)
+                if (onTimeStamp + okayMarginOfError <= audioTime)
                 {
                     Miss();
                     print($"Missed {inputIndex} note");
@@ -133,18 +149,36 @@ public class Lane : MonoBehaviour
                 //Hold notes
                 double onTimeStamp = timeStamps[inputIndex].Item1;
                 double offTimeStamp = timeStamps[inputIndex].Item2;
-                double marginOfError = SongManager.Instance.marginOfError;
+                double okayMarginOfError = SongManager.Instance.okayMarginOfError;
+                double goodMarginOfError = SongManager.Instance.goodMarginOfError;
+                double perfectMarginOfError = SongManager.Instance.perfectMarginOfError;
                 double audioTime = SongManager.GetAudioSourceTime() -
                                    (SongManager.Instance.inputDelayInSeconds / 1000.0);
 
 
                 if (input.WasPressedThisFrame())
                 {
-                    if (Math.Abs(audioTime - onTimeStamp) < marginOfError)
+                    if (Math.Abs(audioTime - onTimeStamp) < perfectMarginOfError)
                     {
                         //Start hold note
-                        Hit();
-                        print($"Started hold on {inputIndex} note");
+                        PerfectHit();
+                        print($"Perfect hold hit on {inputIndex} note");
+                        notes[inputIndex].GetComponent<SpriteRenderer>().enabled = false;
+                        notes[inputIndex].pauseNote = true;
+                    }
+                    else if (Math.Abs(audioTime - onTimeStamp) < goodMarginOfError)
+                    {
+                        //Start hold note
+                        GoodHit();
+                        print($"Good hold hit on {inputIndex} note");
+                        notes[inputIndex].GetComponent<SpriteRenderer>().enabled = false;
+                        notes[inputIndex].pauseNote = true;
+                    }
+                    else if (Math.Abs(audioTime - onTimeStamp) < okayMarginOfError)
+                    {
+                        //Start hold note
+                        OkayHit();
+                        print($"Okay hold hit on {inputIndex} note");
                         notes[inputIndex].GetComponent<SpriteRenderer>().enabled = false;
                         notes[inputIndex].pauseNote = true;
                     }
@@ -158,10 +192,28 @@ public class Lane : MonoBehaviour
                 
                 if (input.WasReleasedThisFrame())
                 {
-                    if (Math.Abs(audioTime - offTimeStamp) < marginOfError)
+                    if (Math.Abs(audioTime - onTimeStamp) < perfectMarginOfError)
                     {
-                        Hit();
-                        print($"Finished hold on {inputIndex} note");
+                        //Start hold note
+                        PerfectHit();
+                        print($"Perfect hold finish on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        Destroy(notes[inputIndex].releaseNotePoint.gameObject);
+                        inputIndex++;
+                    }
+                    else if (Math.Abs(audioTime - onTimeStamp) < goodMarginOfError)
+                    {
+                        //Start hold note
+                        GoodHit();
+                        print($"Good hold finish on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        Destroy(notes[inputIndex].releaseNotePoint.gameObject);
+                        inputIndex++;
+                    }
+                    else if (Math.Abs(audioTime - offTimeStamp) < okayMarginOfError)
+                    {
+                        OkayHit();
+                        print($"Okay hold finish on {inputIndex} note");
                         Destroy(notes[inputIndex].gameObject);
                         Destroy(notes[inputIndex].releaseNotePoint.gameObject);
                         inputIndex++;
@@ -175,7 +227,7 @@ public class Lane : MonoBehaviour
                     }
                 }
                 
-                if (offTimeStamp + marginOfError <= audioTime)
+                if (offTimeStamp + okayMarginOfError <= audioTime)
                 {
                     Miss();
                     print($"Missed {inputIndex} hold note");
@@ -191,10 +243,22 @@ public class Lane : MonoBehaviour
         }
     }
 
-    private void Hit()
+    private void OkayHit()
     {
         //Play hit sound/effects
-        ScoreManager.Instance.Hit();
+        ScoreManager.Instance.OkayHit();
+    }
+    
+    private void GoodHit()
+    {
+        //Play hit sound/effects
+        ScoreManager.Instance.GoodHit();
+    }
+    
+    private void PerfectHit()
+    {
+        //Play hit sound/effects
+        ScoreManager.Instance.PerfectHit();
     }
 
     private void Miss()
