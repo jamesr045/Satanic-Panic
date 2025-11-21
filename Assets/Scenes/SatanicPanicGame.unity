@@ -4948,7 +4948,7 @@ MonoBehaviour:
   okayMarginOfError: 0.2
   goodMarginOfError: 0.1
   perfectMarginOfError: 0.05
-  inputDelayInSeconds: 1
+  inputDelayInSeconds: 0
   noteTimeUntilHit: 4
 --- !u!1 &1966589124
 GameObject:
