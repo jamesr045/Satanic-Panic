@@ -60,7 +60,10 @@ public class SongManager : MonoBehaviour
     private void Start()
     {
         Instance = this;
+    }
 
+    public void StartRhythmGame()
+    {
         switch (currentSong)
         {
             case Songs.SunsetSupernova:
@@ -85,10 +88,7 @@ public class SongManager : MonoBehaviour
                 songFileLocation = midiFilePaths[2];
                 break;
         }
-    }
-
-    public void StartRhythmGame()
-    {
+        
         countdown.StartCountdown();
         
         if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))

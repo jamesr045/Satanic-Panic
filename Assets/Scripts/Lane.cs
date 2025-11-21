@@ -58,8 +58,8 @@ public class Lane : MonoBehaviour
 
                 
                 timeStamps.Add(new Tuple<double, double, bool>(
-                    (double)noteOnMetricTime.Minutes * 60f + noteOnMetricTime.Seconds + (double)noteOnMetricTime.Milliseconds / 1000f,
-                    (double)noteOffMetricTime.Minutes * 60f + noteOffMetricTime.Seconds + (double)noteOffMetricTime.Milliseconds / 1000f, note.Length > 128));
+                    (double)noteOnMetricTime.Minutes * 60f + (noteOnMetricTime.Seconds + SongManager.Instance.inputDelayInSeconds) + (double)noteOnMetricTime.Milliseconds / 1000f,
+                    (double)noteOffMetricTime.Minutes * 60f + (noteOffMetricTime.Seconds + SongManager.Instance.inputDelayInSeconds) + (double)noteOffMetricTime.Milliseconds / 1000f, note.Length > 128));
             }
         }
     }
@@ -68,7 +68,7 @@ public class Lane : MonoBehaviour
     {
         if (spawnIndex < timeStamps.Count)
         {
-            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex].Item1 - SongManager.Instance.noteTimeUntilHit)
+            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex].Item1 - SongManager.Instance.noteTimeUntilHit + SongManager.Instance.inputDelayInSeconds)
             {
                 var note = Instantiate(notePrefab, transform.position,  notePrefab.transform.rotation);
                 var noteScript = note.GetComponent<Note>();

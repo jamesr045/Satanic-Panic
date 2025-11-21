@@ -11,8 +11,8 @@ public class MainMenu : MonoBehaviour
     
      public void PlaySunsetSupernova()
      {
-        SongManager.Instance.StartRhythmGame();
         SongManager.Instance.currentSong = SongManager.Songs.SunsetSupernova;
+        SongManager.Instance.StartRhythmGame();
         
         
         CloseMenu();
@@ -20,16 +20,16 @@ public class MainMenu : MonoBehaviour
      
      public void PlaySubways()
      {
-         SongManager.Instance.StartRhythmGame();
          SongManager.Instance.currentSong = SongManager.Songs.Subways;
+         SongManager.Instance.StartRhythmGame();
          
          CloseMenu();
      }
      
      public void PlayNextStopPurgatory()
      {
-         SongManager.Instance.StartRhythmGame();
          SongManager.Instance.currentSong = SongManager.Songs.NextStopPurgatory;
+         SongManager.Instance.StartRhythmGame();
          
          CloseMenu();
      }
