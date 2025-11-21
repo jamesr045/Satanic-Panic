@@ -4,28 +4,56 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    [Header("Components")]
     public static ScoreManager Instance;
     public AudioSource hitSound;
     public AudioSource missSound;
+    public TMPro.TextMeshPro comboText;
     public TMPro.TextMeshPro scoreText;
     public TMPro.TextMeshPro hitText;
+
+    [Header("Settings")] 
+    public float perfectHitScore;
+    public float goodHitScore;
+    public float okayHitScore;
     
-    private static int _comboScore;
+    private static int _combo;
+    private static float _comboMultiplier;
+    private static int _score;
 
     private void Start()
     {
         Instance = this;
         
-        _comboScore = 0;
+        _combo = 0;
 
         hitText.enabled = false;
+    }
+    private void Update()
+    {
+        comboText.text = ($"COMBO: {_combo.ToString()}");
+        scoreText.text = ($"{_score.ToString()}");
+
+        //Combo Multiplier
+        _comboMultiplier = _combo switch
+        {
+            >= 100 => 2,
+            >= 75 => 1.75f,
+            >= 50 => 1.5f,
+            >= 25 => 1.25f,
+            >= 10 => 1.1f,
+            <= 0 => 1f,
+            _ => _comboMultiplier
+        };
     }
     
     public void PerfectHit()
     {
         Instance.hitSound.Play();
         StartCoroutine(PerfectHitText());
-        _comboScore++;
+        _combo++;
+
+        _score += (int)(perfectHitScore * _comboMultiplier);
         
         SongManager.Instance.characterPlayingAudioSource.mute = false;
         SongManager.Instance.characterMissingAudioSource.mute = true;
@@ -34,7 +62,9 @@ public class ScoreManager : MonoBehaviour
     {
         Instance.hitSound.Play();
         StartCoroutine(GoodHitText());
-        _comboScore++;
+        _combo++;
+        
+        _score += (int)(goodHitScore * _comboMultiplier);
         
         SongManager.Instance.characterPlayingAudioSource.mute = false;
         SongManager.Instance.characterMissingAudioSource.mute = true;
@@ -44,7 +74,9 @@ public class ScoreManager : MonoBehaviour
     {
         Instance.hitSound.Play();
         StartCoroutine(OkayHitText());
-        _comboScore++;
+        _combo++;
+        
+        _score += (int)(okayHitScore * _comboMultiplier);
         
         SongManager.Instance.characterPlayingAudioSource.mute = false;
         SongManager.Instance.characterMissingAudioSource.mute = true;
@@ -53,16 +85,12 @@ public class ScoreManager : MonoBehaviour
     public void Miss()
     {
         Instance.missSound.Play();
-        _comboScore = 0;
+        _combo = 0;
         
         SongManager.Instance.characterPlayingAudioSource.mute = true;
         SongManager.Instance.characterMissingAudioSource.mute = false;
     }
 
-    private void Update()
-    {
-        scoreText.text = ($"COMBO: {_comboScore.ToString()}");
-    }
     
     private IEnumerator PerfectHitText()
     {

@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject mainMenuCanvas;
+    public Image mainMenuTransform;
     
      public void PlaySunsetSupernova()
      {
         SongManager.Instance.StartRhythmGame();
         SongManager.Instance.currentSong = SongManager.Songs.SunsetSupernova;
         
-        mainMenuCanvas.SetActive(false);
+        
+        CloseMenu();
      }
      
      public void PlaySubways()
@@ -20,7 +23,7 @@ public class MainMenu : MonoBehaviour
          SongManager.Instance.StartRhythmGame();
          SongManager.Instance.currentSong = SongManager.Songs.Subways;
          
-         mainMenuCanvas.SetActive(false);
+         CloseMenu();
      }
      
      public void PlayNextStopPurgatory()
@@ -28,7 +31,22 @@ public class MainMenu : MonoBehaviour
          SongManager.Instance.StartRhythmGame();
          SongManager.Instance.currentSong = SongManager.Songs.NextStopPurgatory;
          
-         mainMenuCanvas.SetActive(false);
+         CloseMenu();
+     }
+
+     public void OpenMenu()
+     {
+         Debug.Log("Opening Menu");
+         
+         mainMenuTransform.transform.DOMoveY(0,1);
+     }
+     
+     public void CloseMenu()
+     {
+         Debug.Log("Closing Menu");
+
+         mainMenuTransform.transform.DOMoveY(500,1);
+         //mainMenuTransform.DOFade(0, 1);
      }
 
      public void QuitGame()
