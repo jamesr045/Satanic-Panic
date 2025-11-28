@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     public float okayHitScore;
     
     public static int Combo;
+    public static int MaxCombo;
     private static float _comboMultiplier;
     public static int Score;
 
@@ -45,6 +46,8 @@ public class ScoreManager : MonoBehaviour
             <= 0 => 1f,
             _ => _comboMultiplier
         };
+        
+        if (Combo > MaxCombo) MaxCombo = Combo;
     }
     
     public void PerfectHit()
@@ -52,6 +55,8 @@ public class ScoreManager : MonoBehaviour
         Instance.hitSound.Play();
         StartCoroutine(PerfectHitText());
         Combo++;
+
+        Debug.Log(MaxCombo);
 
         Score += (int)(perfectHitScore * _comboMultiplier);
         
@@ -64,6 +69,8 @@ public class ScoreManager : MonoBehaviour
         StartCoroutine(GoodHitText());
         Combo++;
         
+        Debug.Log(MaxCombo);
+        
         Score += (int)(goodHitScore * _comboMultiplier);
         
         SongManager.Instance.characterPlayingAudioSource.mute = false;
@@ -75,6 +82,8 @@ public class ScoreManager : MonoBehaviour
         Instance.hitSound.Play();
         StartCoroutine(OkayHitText());
         Combo++;
+        
+        Debug.Log(MaxCombo);
         
         Score += (int)(okayHitScore * _comboMultiplier);
         

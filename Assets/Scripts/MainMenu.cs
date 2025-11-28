@@ -84,14 +84,14 @@ public class MainMenu : MonoBehaviour
          scoreScreen.SetActive(true);
 
          scoreText.text = ($"Final Score: {ScoreManager.Score}");
-         comboText.text = ($"Final Combo: {ScoreManager.Combo}");
+         comboText.text = ($"Highest Combo: {ScoreManager.MaxCombo}");
          
          Debug.Log("Opening Score Screen");
          mainMenuTransform.transform.DOMoveY(0,1);
      }
 
      public void QuitGame()
-     {
+     {  
         Application.Quit();
      }
 }
