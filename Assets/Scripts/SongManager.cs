@@ -53,6 +53,9 @@ public class SongManager : MonoBehaviour
     public double perfectMarginOfError;
     public float inputDelayInSeconds;
     public float noteTimeUntilHit;
+
+    public bool songStarted;
+    private bool _songOver;
     
 
     
@@ -156,6 +159,8 @@ public class SongManager : MonoBehaviour
 
         characterPlayingAudioSource.mute = false;
         characterMissingAudioSource.mute = true;
+        
+        songStarted = true;
     }
 
     public static double GetAudioSourceTime()
@@ -165,5 +170,23 @@ public class SongManager : MonoBehaviour
             return (double)Instance.backgroundAudioSource.timeSamples / Instance.backgroundAudioSource.clip.frequency;
         }
         else return 0;
+    }
+
+    private void Update()
+    {
+        if (!backgroundAudioSource.isPlaying && !_songOver && songStarted)
+        {
+            _songOver = true;
+            songStarted = false;
+            Debug.Log("Song Over");
+            StartCoroutine(EndOfSong());
+        }
+    }
+
+    IEnumerator EndOfSong()
+    {
+        yield return new WaitForSeconds(2f);
+        
+        MainMenu.Instance.OpenScoreScreen();
     }
 }

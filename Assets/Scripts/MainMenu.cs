@@ -1,19 +1,44 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public static MainMenu Instance;
     public Image mainMenuTransform;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI comboText;
+
+    public GameObject gameTitle;
     
-     public void PlaySunsetSupernova()
+    [Header("Screens")]
+    public GameObject mainMenu;
+    public GameObject songSelection;
+    public GameObject settingsMenu;
+    public GameObject volumeMenu;
+    public GameObject scoreScreen;
+
+    private void Start()
+    {
+        Instance = this;
+        
+        gameTitle.SetActive(true);
+        mainMenu.SetActive(true);
+        songSelection.SetActive(false);
+        settingsMenu.SetActive(false);
+        volumeMenu.SetActive(false);
+        scoreScreen.SetActive(false);
+    }
+
+    public void PlaySunsetSupernova()
      {
         SongManager.Instance.currentSong = SongManager.Songs.SunsetSupernova;
         SongManager.Instance.StartRhythmGame();
-        
         
         CloseMenu();
      }
@@ -47,6 +72,22 @@ public class MainMenu : MonoBehaviour
 
          mainMenuTransform.transform.DOMoveY(500,1);
          //mainMenuTransform.DOFade(0, 1);
+     }
+
+     public void OpenScoreScreen()
+     {
+         gameTitle.SetActive(false);
+         mainMenu.SetActive(false);
+         songSelection.SetActive(false);
+         settingsMenu.SetActive(false);
+         volumeMenu.SetActive(false);
+         scoreScreen.SetActive(true);
+
+         scoreText.text = ($"Final Score: {ScoreManager.Score}");
+         comboText.text = ($"Final Combo: {ScoreManager.Combo}");
+         
+         Debug.Log("Opening Score Screen");
+         mainMenuTransform.transform.DOMoveY(0,1);
      }
 
      public void QuitGame()
