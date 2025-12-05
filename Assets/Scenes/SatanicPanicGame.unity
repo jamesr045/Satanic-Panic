@@ -5485,20 +5485,20 @@ MonoBehaviour:
   characterMissingAudioSource: {fileID: 1875474528}
   currentSong: 0
   backgroundSongs:
-  - {fileID: 8300000, guid: 671485ade112ad04895a4772e298331b, type: 3}
-  - {fileID: 8300000, guid: 671485ade112ad04895a4772e298331b, type: 3}
-  - {fileID: 8300000, guid: 5145a01cfa436e74cb6f8c6ba03d21e8, type: 3}
+  - {fileID: 8300000, guid: c1954a93269e5660aa64ea4db93448b5, type: 3}
+  - {fileID: 8300000, guid: 2134491f2909cfa43ab61e9de63e1e9f, type: 3}
+  - {fileID: 8300000, guid: 5b9ac67da1ecb168eb7b0a07baf27ba3, type: 3}
   characterPlayingSongs:
-  - {fileID: 8300000, guid: b377d57b52c4f9644bad53aea192ca8a, type: 3}
-  - {fileID: 8300000, guid: b377d57b52c4f9644bad53aea192ca8a, type: 3}
-  - {fileID: 8300000, guid: 9441266757ca3c14ab5ccdfff1eb87b1, type: 3}
+  - {fileID: 8300000, guid: 61c3bea6a99c2c1a7aab8901a9b3580d, type: 3}
+  - {fileID: 8300000, guid: fdd65ff79960d2d3ca4c54bc2669d28a, type: 3}
+  - {fileID: 8300000, guid: e07a8fe8cb7e6e5ee8d50a9b67fda2b2, type: 3}
   characterMissingSongs:
-  - {fileID: 8300000, guid: 0b373f734e57eb542a50634f7b7eeb26, type: 3}
-  - {fileID: 8300000, guid: 0b373f734e57eb542a50634f7b7eeb26, type: 3}
-  - {fileID: 8300000, guid: d28a6acf7fbf058449e46572dbd7c81a, type: 3}
+  - {fileID: 8300000, guid: e4d93f04bc244f96984cfcfc07ede26b, type: 3}
+  - {fileID: 8300000, guid: 393ae3aa64ec8e40b830486d66078802, type: 3}
+  - {fileID: 8300000, guid: 9480428894c6710d2bc2f75a1c586362, type: 3}
   midiFilePaths:
-  - SunsetSupernovaChart.mid
-  - Next stop_ Purgatory.mid
+  - Sunset Supernova 3.mid
+  - Subways 3.mid
   - Next stop_ Purgatory.mid
   songFileLocation: 
   selectedSongBg: {fileID: 0}
