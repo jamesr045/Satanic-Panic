@@ -33,6 +33,10 @@ public class Lane : MonoBehaviour
     public Color defaultHitPointColour;
     public Color hitColour;
 
+    [Header("Character Animations")]
+    public Animator characterAnimator;
+    public AnimationClip hitAnimationClip;
+
 
     private void Awake()
     {
@@ -241,6 +245,8 @@ public class Lane : MonoBehaviour
             //Change colour of hit line for the lane
             StartCoroutine(HitColour());
         }
+        
+        if (input.WasPressedThisFrame()) characterAnimator.Play(hitAnimationClip.name);
     }
 
     private void OkayHit()
