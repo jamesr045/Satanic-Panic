@@ -92,6 +92,8 @@ public class SongManager : MonoBehaviour
                 break;
         }
         
+        ScoreManager.Instance.ResetScores();
+        
         countdown.StartCountdown();
         
         if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))

@@ -30,6 +30,14 @@ public class ScoreManager : MonoBehaviour
 
         hitText.enabled = false;
     }
+    
+    public void ResetScores()
+    {
+        Combo = 0;
+        MaxCombo = 0;
+        Score = 0;
+    }
+    
     private void Update()
     {
         comboText.text = ($"COMBO: {Combo.ToString()}");
