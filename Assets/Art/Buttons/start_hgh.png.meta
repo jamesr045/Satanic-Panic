@@ -1,0 +1,1339 @@
+fileFormatVersion: 2
+guid: d7506944374a26b43a059dbbc4cc236e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4591861129674083149
+    second: start_hgh_0
+  - first:
+      213: 4109851548388760835
+    second: start_hgh_1
+  - first:
+      213: -5637282462633429287
+    second: start_hgh_2
+  - first:
+      213: -7406194635296334408
+    second: start_hgh_3
+  - first:
+      213: 1691062469586757178
+    second: start_hgh_4
+  - first:
+      213: 6402289400388438001
+    second: start_hgh_5
+  - first:
+      213: -5654079806430923712
+    second: start_hgh_6
+  - first:
+      213: 7707412263421900040
+    second: start_hgh_7
+  - first:
+      213: 7739705992858335788
+    second: start_hgh_8
+  - first:
+      213: -7922954060340586125
+    second: start_hgh_9
+  - first:
+      213: 3505860292649899873
+    second: start_hgh_10
+  - first:
+      213: -8054267737977015612
+    second: start_hgh_11
+  - first:
+      213: -7604726714787628138
+    second: start_hgh_12
+  - first:
+      213: -7979958498032856007
+    second: start_hgh_13
+  - first:
+      213: 8163900320475827343
+    second: start_hgh_14
+  - first:
+      213: 170380251495233758
+    second: start_hgh_15
+  - first:
+      213: -2987838318660734985
+    second: start_hgh_16
+  - first:
+      213: -4537265847233308093
+    second: start_hgh_17
+  - first:
+      213: 2243111601500709930
+    second: start_hgh_18
+  - first:
+      213: -2837377117330555607
+    second: start_hgh_19
+  - first:
+      213: 1406755708760571231
+    second: start_hgh_20
+  - first:
+      213: -686573723712986317
+    second: start_hgh_21
+  - first:
+      213: 348802523828492067
+    second: start_hgh_22
+  - first:
+      213: 3638341431375062350
+    second: start_hgh_23
+  - first:
+      213: -8713466269670625953
+    second: start_hgh_24
+  - first:
+      213: -2839617861196001740
+    second: start_hgh_25
+  - first:
+      213: -1889052096366281211
+    second: start_hgh_26
+  - first:
+      213: -2550156938129589626
+    second: start_hgh_27
+  - first:
+      213: 4400145967767173443
+    second: start_hgh_28
+  - first:
+      213: -5447672830047795009
+    second: start_hgh_29
+  - first:
+      213: -8481191646141117893
+    second: start_hgh_30
+  - first:
+      213: 1830328444396117390
+    second: start_hgh_31
+  - first:
+      213: -3468200682615148121
+    second: start_hgh_32
+  - first:
+      213: -6204592951349783885
+    second: start_hgh_33
+  - first:
+      213: 55071420963715533
+    second: start_hgh_34
+  - first:
+      213: -4101958996335506492
+    second: start_hgh_35
+  - first:
+      213: -4387997535513066574
+    second: start_hgh_36
+  - first:
+      213: 3250257558937074371
+    second: start_hgh_37
+  - first:
+      213: -7121058756854817777
+    second: start_hgh_38
+  - first:
+      213: -5712296543450212056
+    second: start_hgh_39
+  - first:
+      213: -7664205995126348438
+    second: start_hgh_40
+  - first:
+      213: 8129792408769403252
+    second: start_hgh_41
+  - first:
+      213: -6260391264591405262
+    second: start_hgh_42
+  - first:
+      213: 3425935865270139909
+    second: start_hgh_43
+  - first:
+      213: 3198834764550963230
+    second: start_hgh_44
+  - first:
+      213: 7038001718865071192
+    second: start_hgh_45
+  - first:
+      213: -4307790486043684701
+    second: start_hgh_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: start_hgh_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 146
+        width: 171
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b43adb91ae6640c0800000000000000
+      internalID: -4591861129674083149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 120
+        width: 10
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d1d455530290930800000000000000
+      internalID: 4109851548388760835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_2
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 120
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6f134c77954c1b0800000000000000
+      internalID: -5637282462633429287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_3
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 120
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd12c90839e73990800000000000000
+      internalID: -7406194635296334408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_4
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 119
+        width: 54
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a36a6b04b5cd77710800000000000000
+      internalID: 1691062469586757178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_5
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 121
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7c663f94089d850800000000000000
+      internalID: 6402289400388438001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_6
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 120
+        width: 49
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044b9f56f5ca881b0800000000000000
+      internalID: -5654079806430923712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_7
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 121
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80570c23e9a36fa60800000000000000
+      internalID: 7707412263421900040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_8
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 120
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a78420895f86b60800000000000000
+      internalID: 7739705992858335788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_9
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 150
+        width: 227
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37919ad72430c0290800000000000000
+      internalID: -7922954060340586125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_10
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 131
+        width: 227
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1675b8f7c5157a030800000000000000
+      internalID: 3505860292649899873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_11
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 141
+        width: 171
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c2bdf76a2e793090800000000000000
+      internalID: -8054267737977015612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 133
+        width: 170
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69bf82f2855967690800000000000000
+      internalID: -7604726714787628138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_13
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 125
+        width: 143
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9345462960e714190800000000000000
+      internalID: -7979958498032856007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_14
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 120
+        width: 171
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8cc8a756100c4170800000000000000
+      internalID: 8163900320475827343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_15
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 82
+        width: 229
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed87d1f9fef4d5200800000000000000
+      internalID: 170380251495233758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 112
+        width: 170
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff2de121e01986d0800000000000000
+      internalID: -2987838318660734985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_17
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 104
+        width: 171
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a952c50c46801c0800000000000000
+      internalID: -4537265847233308093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_18
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 99
+        width: 171
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24e107fd12212f10800000000000000
+      internalID: 2243111601500709930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_19
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 64
+        width: 99
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92db0bb7b8c9f98d0800000000000000
+      internalID: -2837377117330555607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_20
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 68
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d3d622ddcc58310800000000000000
+      internalID: 1406755708760571231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_21
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 69
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33368fdf5dcc876f0800000000000000
+      internalID: -686573723712986317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_22
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 68
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3279e812c0237d400800000000000000
+      internalID: 348802523828492067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_23
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 91
+        width: 135
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4562bc414cfd7230800000000000000
+      internalID: 3638341431375062350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 83
+        width: 171
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d2fe9f79c831780800000000000000
+      internalID: -8713466269670625953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_25
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 78
+        width: 171
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ece85a996a798d0800000000000000
+      internalID: -2839617861196001740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_26
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 74
+        width: 231
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e71e1802db8c5e0800000000000000
+      internalID: -1889052096366281211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_27
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 81
+        width: 104
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68ab94da6c50c9cd0800000000000000
+      internalID: -2550156938129589626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_28
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 70
+        width: 170
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34931a8d175701d30800000000000000
+      internalID: 4400145967767173443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_29
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 69
+        width: 194
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb844709c6af564b0800000000000000
+      internalID: -5447672830047795009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_30
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 63
+        width: 194
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a8fb31221cc4a80800000000000000
+      internalID: -8481191646141117893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_31
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 60
+        width: 171
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d168ec502a66910800000000000000
+      internalID: 1830328444396117390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_32
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 55
+        width: 171
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a1f4febad97edfc0800000000000000
+      internalID: -3468200682615148121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_33
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 56
+        width: 231
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b257e6859bd4e9a0800000000000000
+      internalID: -6204592951349783885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_34
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 47
+        width: 98
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc971d36a27a3c000800000000000000
+      internalID: 55071420963715533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_35
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 47
+        width: 576
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cb4434a60ae217c0800000000000000
+      internalID: -4101958996335506492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_36
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 31
+        width: 576
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b344747d73ba13c0800000000000000
+      internalID: -4387997535513066574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_37
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 39
+        width: 100
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3caf8fc770c3b1d20800000000000000
+      internalID: 3250257558937074371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_38
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 34
+        width: 100
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0cdbf42acaec2d90800000000000000
+      internalID: -7121058756854817777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_39
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 20
+        width: 98
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82955fb0f88d9b0b0800000000000000
+      internalID: -5712296543450212056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_40
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 26
+        width: 486
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a65231f014543a590800000000000000
+      internalID: -7664205995126348438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_41
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 20
+        width: 579
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4791e5e4f13d2d070800000000000000
+      internalID: 8129792408769403252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 99
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f1217505f9e19a0800000000000000
+      internalID: -6260391264591405262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 99
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50c72b0a48e5b8f20800000000000000
+      internalID: 3425935865270139909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_44
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 8
+        width: 579
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e100b3c254b846c20800000000000000
+      internalID: 3198834764550963230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_45
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1
+        width: 579
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c8a8d36410ca160800000000000000
+      internalID: 7038001718865071192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: start_hgh_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 91
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a01f886067a734c0800000000000000
+      internalID: -4307790486043684701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      start_hgh_0: -4591861129674083149
+      start_hgh_1: 4109851548388760835
+      start_hgh_10: 3505860292649899873
+      start_hgh_11: -8054267737977015612
+      start_hgh_12: -7604726714787628138
+      start_hgh_13: -7979958498032856007
+      start_hgh_14: 8163900320475827343
+      start_hgh_15: 170380251495233758
+      start_hgh_16: -2987838318660734985
+      start_hgh_17: -4537265847233308093
+      start_hgh_18: 2243111601500709930
+      start_hgh_19: -2837377117330555607
+      start_hgh_2: -5637282462633429287
+      start_hgh_20: 1406755708760571231
+      start_hgh_21: -686573723712986317
+      start_hgh_22: 348802523828492067
+      start_hgh_23: 3638341431375062350
+      start_hgh_24: -8713466269670625953
+      start_hgh_25: -2839617861196001740
+      start_hgh_26: -1889052096366281211
+      start_hgh_27: -2550156938129589626
+      start_hgh_28: 4400145967767173443
+      start_hgh_29: -5447672830047795009
+      start_hgh_3: -7406194635296334408
+      start_hgh_30: -8481191646141117893
+      start_hgh_31: 1830328444396117390
+      start_hgh_32: -3468200682615148121
+      start_hgh_33: -6204592951349783885
+      start_hgh_34: 55071420963715533
+      start_hgh_35: -4101958996335506492
+      start_hgh_36: -4387997535513066574
+      start_hgh_37: 3250257558937074371
+      start_hgh_38: -7121058756854817777
+      start_hgh_39: -5712296543450212056
+      start_hgh_4: 1691062469586757178
+      start_hgh_40: -7664205995126348438
+      start_hgh_41: 8129792408769403252
+      start_hgh_42: -6260391264591405262
+      start_hgh_43: 3425935865270139909
+      start_hgh_44: 3198834764550963230
+      start_hgh_45: 7038001718865071192
+      start_hgh_46: -4307790486043684701
+      start_hgh_5: 6402289400388438001
+      start_hgh_6: -5654079806430923712
+      start_hgh_7: 7707412263421900040
+      start_hgh_8: 7739705992858335788
+      start_hgh_9: -7922954060340586125
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
