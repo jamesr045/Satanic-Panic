@@ -37,13 +37,42 @@ public class Lane : MonoBehaviour
     public Animator characterAnimator;
     public AnimationClip hitAnimationClip;
 
+    [Header("Guitar Animations")] 
+    public SpriteRenderer guitarSprite;
+    public Sprite topChord;
+    public Sprite bottomChord;
+    private Sprite _assignedChord;
+
 
     private void Awake()
     {
-        if (this.CompareTag("Lane 1")) input = InputSystem.actions.FindAction("Lane 1 Press");
-        if (this.CompareTag("Lane 2")) input = InputSystem.actions.FindAction("Lane 2 Press");
-        if (this.CompareTag("Lane 3")) input = InputSystem.actions.FindAction("Lane 3 Press");
-        if (this.CompareTag("Lane 4")) input = InputSystem.actions.FindAction("Lane 4 Press");
+        if (this.CompareTag("Lane 1"))
+        {
+            input = InputSystem.actions.FindAction("Lane 1 Press");
+    
+            _assignedChord = topChord;
+        }
+
+        if (this.CompareTag("Lane 2"))
+        {
+            input = InputSystem.actions.FindAction("Lane 2 Press");
+            
+            _assignedChord = topChord; 
+        }
+
+        if (this.CompareTag("Lane 3"))
+        {
+            input = InputSystem.actions.FindAction("Lane 3 Press");
+            
+            _assignedChord = bottomChord;
+        }
+
+        if (this.CompareTag("Lane 4"))
+        {
+            input = InputSystem.actions.FindAction("Lane 4 Press");
+            
+            _assignedChord = bottomChord;
+        }
         
         laneHit = laneHitPos.position;
         laneDespawn = laneDespawnPos.position;
@@ -245,8 +274,13 @@ public class Lane : MonoBehaviour
             //Change colour of hit line for the lane
             StartCoroutine(HitColour());
         }
-        
-        if (input.WasPressedThisFrame()) characterAnimator.Play(hitAnimationClip.name);
+
+        if (input.WasPressedThisFrame())
+        {
+            characterAnimator.Play(hitAnimationClip.name);
+
+            guitarSprite.sprite = _assignedChord;
+        }
     }
 
     private void OkayHit()
