@@ -4404,7 +4404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.54901963, g: 0.4862745, b: 0.4862745, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8591,6 +8591,10 @@ PrefabInstance:
       propertyPath: characterAnimator
       value: 
       objectReference: {fileID: 774280300}
+    - target: {fileID: 4517126489031344731, guid: f9f7d1c1b0d22b14ab0cbb6e5c4627d6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.045
+      objectReference: {fileID: 0}
     - target: {fileID: 4766052319612239058, guid: f9f7d1c1b0d22b14ab0cbb6e5c4627d6, type: 3}
       propertyPath: topChord
       value: 
@@ -8686,6 +8690,14 @@ PrefabInstance:
     - target: {fileID: 7273140097774557245, guid: f9f7d1c1b0d22b14ab0cbb6e5c4627d6, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057152076201502073, guid: f9f7d1c1b0d22b14ab0cbb6e5c4627d6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0445
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057152076201502073, guid: f9f7d1c1b0d22b14ab0cbb6e5c4627d6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
