@@ -152,6 +152,7 @@ public class SongManager : MonoBehaviour
     {
         backgroundAudioSource.clip = selectedSongBg;
         backgroundAudioSource.Play();
+        StartCoroutine(WaitForSongEnd(backgroundAudioSource.clip.length));
         
         characterPlayingAudioSource.clip = selectedSongHit;
         characterPlayingAudioSource.Play();
@@ -174,20 +175,28 @@ public class SongManager : MonoBehaviour
         else return 0;
     }
 
-    private void Update()
+    // private void Update()
+    // {
+    //     if (!backgroundAudioSource.isPlaying && !_songOver && songStarted)
+    //     {
+    //         _songOver = true;
+    //         songStarted = false;
+    //         Debug.Log("Song Over");
+    //         StartCoroutine(EndOfSong());
+    //     }
+    // }
+
+    IEnumerator WaitForSongEnd(float songLength)
     {
-        if (!backgroundAudioSource.isPlaying && !_songOver && songStarted)
-        {
-            _songOver = true;
-            songStarted = false;
-            Debug.Log("Song Over");
-            StartCoroutine(EndOfSong());
-        }
+        yield return new WaitForSeconds(songLength);
+        
+        Debug.Log("Song Over");
+        StartCoroutine(EndOfSong());
     }
 
     IEnumerator EndOfSong()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         
         MainMenu.Instance.OpenScoreScreen();
     }
