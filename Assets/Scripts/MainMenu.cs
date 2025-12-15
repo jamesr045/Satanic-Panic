@@ -14,8 +14,6 @@ public class MainMenu : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI comboText;
 
-    public GameObject gameTitle;
-    
     [Header("Screens")]
     public GameObject mainMenu;
     public GameObject songSelection;
@@ -26,13 +24,17 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        
-        gameTitle.SetActive(true);
+
         mainMenu.SetActive(true);
         songSelection.SetActive(false);
         settingsMenu.SetActive(false);
         volumeMenu.SetActive(false);
         scoreScreen.SetActive(false);
+    }
+
+    public void OnMouseEnter()
+    {
+        Debug.Log("OnMouseEnter");
     }
 
     public void PlaySunsetSupernova()
@@ -76,7 +78,6 @@ public class MainMenu : MonoBehaviour
 
      public void OpenScoreScreen()
      {
-         gameTitle.SetActive(false);
          mainMenu.SetActive(false);
          songSelection.SetActive(false);
          settingsMenu.SetActive(false);
