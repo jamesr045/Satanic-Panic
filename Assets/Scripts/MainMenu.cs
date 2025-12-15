@@ -21,6 +21,11 @@ public class MainMenu : MonoBehaviour
     public GameObject volumeMenu;
     public GameObject scoreScreen;
 
+    [Header("Albums")]
+    public GameObject purgatory;
+    public GameObject subways;
+    public GameObject supernova;
+
     private void Start()
     {
         Instance = this;
@@ -94,5 +99,25 @@ public class MainMenu : MonoBehaviour
      public void QuitGame()
      {  
         Application.Quit();
+     }
+     
+     
+     ///////////////// PINS
+     public void OnPin1Pressed()
+     {
+         purgatory.SetActive(false);
+         subways.SetActive(false);
+     }
+
+     public void OnPin2Pressed()
+     {
+         supernova.SetActive(false);
+         purgatory.SetActive(false);
+     }
+
+     public void OnPin3Pressed()
+     {
+        subways.SetActive(false);
+        supernova.SetActive(false);
      }
 }
