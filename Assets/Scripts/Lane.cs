@@ -38,10 +38,10 @@ public class Lane : MonoBehaviour
     public AnimationClip hitAnimationClip;
 
     [Header("Guitar Animations")] 
-    public SpriteRenderer guitarSprite;
-    public Sprite topChord;
-    public Sprite bottomChord;
-    private Sprite _assignedChord;
+    public SpriteRenderer topChord;
+    public SpriteRenderer bottomChord;
+    private SpriteRenderer _assignedChord;
+    private SpriteRenderer _unassignedChord;
 
 
     private void Awake()
@@ -51,6 +51,7 @@ public class Lane : MonoBehaviour
             input = InputSystem.actions.FindAction("Lane 1 Press");
     
             _assignedChord = topChord;
+            _unassignedChord = bottomChord;
         }
 
         if (this.CompareTag("Lane 2"))
@@ -58,6 +59,7 @@ public class Lane : MonoBehaviour
             input = InputSystem.actions.FindAction("Lane 2 Press");
             
             _assignedChord = topChord; 
+            _unassignedChord = bottomChord;
         }
 
         if (this.CompareTag("Lane 3"))
@@ -65,6 +67,7 @@ public class Lane : MonoBehaviour
             input = InputSystem.actions.FindAction("Lane 3 Press");
             
             _assignedChord = bottomChord;
+            _unassignedChord = topChord;
         }
 
         if (this.CompareTag("Lane 4"))
@@ -72,6 +75,7 @@ public class Lane : MonoBehaviour
             input = InputSystem.actions.FindAction("Lane 4 Press");
             
             _assignedChord = bottomChord;
+            _unassignedChord = topChord;
         }
         
         laneHit = laneHitPos.position;
@@ -279,7 +283,8 @@ public class Lane : MonoBehaviour
         {
             characterAnimator.Play(hitAnimationClip.name);
 
-            guitarSprite.sprite = _assignedChord;
+            _assignedChord.enabled = true;
+            _unassignedChord.enabled = false;
         }
     }
 

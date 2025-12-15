@@ -5,6 +5,48 @@ TextureImporter:
   - first:
       213: 8201247552103971212
     second: Cyclops_Play_Sprite2_0
+  - first:
+      213: -8975398746354736821
+    second: Cyclops_Play_Sprite2_1
+  - first:
+      213: -1833740462615940188
+    second: Cyclops_Play_Sprite2_2
+  - first:
+      213: 2033144317100557682
+    second: Cyclops_Play_Sprite2_3
+  - first:
+      213: 929124254933861956
+    second: Cyclops_Play_Sprite2_4
+  - first:
+      213: -3294096031734887154
+    second: Cyclops_Play_Sprite2_5
+  - first:
+      213: -703317490823460597
+    second: Cyclops_Play_Sprite2_6
+  - first:
+      213: -8254599000692999833
+    second: Cyclops_Play_Sprite2_7
+  - first:
+      213: -3417015219910338225
+    second: Cyclops_Play_Sprite2_8
+  - first:
+      213: 7609255789090368534
+    second: Cyclops_Play_Sprite2_9
+  - first:
+      213: -9061559792236208916
+    second: Cyclops_Play_Sprite2_10
+  - first:
+      213: 6164916260512811495
+    second: Cyclops_Play_Sprite2_11
+  - first:
+      213: 3204495330518518889
+    second: Cyclops_Play_Sprite2_12
+  - first:
+      213: 3727022048571091486
+    second: Cyclops_Play_Sprite2_13
+  - first:
+      213: 4507352618407845975
+    second: Cyclops_Play_Sprite2_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +79,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +88,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,10 +158,10 @@ TextureImporter:
       name: Cyclops_Play_Sprite2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1580
-        height: 1080
+        x: 25
+        y: 303
+        width: 579
+        height: 715
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,11 +176,319 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_1
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 590
+        width: 598
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b412a06d46af07380800000000000000
+      internalID: -8975398746354736821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_2
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 0
+        width: 132
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3348bc3ce3d86e0800000000000000
+      internalID: -1833740462615940188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_3
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 322
+        width: 111
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27502edfbfd273c10800000000000000
+      internalID: 2033144317100557682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_4
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 286
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446488f4699e4ec00800000000000000
+      internalID: 929124254933861956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_5
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 280
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d0b6cac150942d0800000000000000
+      internalID: -3294096031734887154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_6
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 273
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09062be7705d36f0800000000000000
+      internalID: -703317490823460597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_7
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 246
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769366091f5c17d80800000000000000
+      internalID: -8254599000692999833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_8
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 240
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f491429f2c25490d0800000000000000
+      internalID: -3417015219910338225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_9
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 227
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ce0d913d1899960800000000000000
+      internalID: 7609255789090368534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_10
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 217
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec5cc0116fde3280800000000000000
+      internalID: -9061559792236208916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_11
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 212
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e945e10dae2e8550800000000000000
+      internalID: 6164916260512811495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_12
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 199
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c44f36687a87c20800000000000000
+      internalID: 3204495330518518889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_13
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 194
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ae02b7eca09b330800000000000000
+      internalID: 3727022048571091486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cyclops_Play_Sprite2_14
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 0
+        width: 344
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75060a153555d8e30800000000000000
+      internalID: 4507352618407845975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +499,20 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Cyclops_Play_Sprite2_0: 8201247552103971212
+      Cyclops_Play_Sprite2_1: -8975398746354736821
+      Cyclops_Play_Sprite2_10: -9061559792236208916
+      Cyclops_Play_Sprite2_11: 6164916260512811495
+      Cyclops_Play_Sprite2_12: 3204495330518518889
+      Cyclops_Play_Sprite2_13: 3727022048571091486
+      Cyclops_Play_Sprite2_14: 4507352618407845975
+      Cyclops_Play_Sprite2_2: -1833740462615940188
+      Cyclops_Play_Sprite2_3: 2033144317100557682
+      Cyclops_Play_Sprite2_4: 929124254933861956
+      Cyclops_Play_Sprite2_5: -3294096031734887154
+      Cyclops_Play_Sprite2_6: -703317490823460597
+      Cyclops_Play_Sprite2_7: -8254599000692999833
+      Cyclops_Play_Sprite2_8: -3417015219910338225
+      Cyclops_Play_Sprite2_9: 7609255789090368534
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
